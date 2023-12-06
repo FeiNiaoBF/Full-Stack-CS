@@ -1,0 +1,12 @@
+note over browser:
+User interacts with the SPA
+and navigates to create a new note
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+server-->browser: New note created successfully (JavaScript)
+
+note over browser:
+SPA executes the event handler
+that updates the display with the new note
+end note
