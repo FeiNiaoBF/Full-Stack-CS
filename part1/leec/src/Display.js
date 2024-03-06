@@ -1,5 +1,5 @@
 const Display = (props) => {
-  retunr(<div>{props.counter}</div>);
+  return(<div>{props.counter}</div>);
 };
 
 export default Display;

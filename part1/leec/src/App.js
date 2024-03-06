@@ -60,21 +60,21 @@ const History = (props) => {
 // }
 
 const App = () => {
-    const [value, setValue] = useState(10)
+  const [value, setValue] = useState(10)
 
-    const setToVal = (nv) => () => {
-        console.log('value is', nv)
-        setValue(nv)
-    }
+  const setToVal = (nv) => () => {
+    console.log('value is', nv)
+    setValue(nv)
+  }
 
-    return (
-      <div>
-        <h1>Greetings</h1>
-        {value}
-        <button onClick={setToVal(0)}>reset to zero</button>
-        <button onClick={setToVal(1000)}>reset to thousand</button>
-        <button onClick={setToVal(value + 1)}>increment</button>
-      </div>
-    )
+  return (
+    <div>
+      <h1>Greetings</h1>
+      {value}
+      <button onClick={setToVal(0)}>reset to zero</button>
+      <button onClick={setToVal(1000)}>reset to thousand</button>
+      <button onClick={setToVal(value + 1)}>increment</button>
+    </div>
+  )
 }
 export default App

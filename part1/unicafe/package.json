@@ -1,5 +1,5 @@
 {
-  "name": "part1",
+  "name": "unicafe",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -34,12 +34,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "none",
-    "printWidth": 80
   }
 }
