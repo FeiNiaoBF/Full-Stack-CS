@@ -1,0 +1,5 @@
+{
+  "prettier.semi": false,
+  "prettier.singleAttributePerLine": true,
+  "prettier.singleQuote": false
+}
