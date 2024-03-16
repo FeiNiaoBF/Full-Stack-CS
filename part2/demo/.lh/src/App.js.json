@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 47,
+            "activePatchIndex": 49,
             "patches": [
                 {
                     "date": 1710595140895,
@@ -196,6 +196,14 @@
                 {
                     "date": 1710596799107,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n       important: Math.random() < 0.5,\n       id: notes.length + 1,\n     };\n     setNotes(notes.concat(noteObject));\n-    setNewNote\n+    setNewNote('');\n     console.log('button clicked', event.target);\n   };\n \n   const handleNoteChange = (event) => {\n"
+                },
+                {
+                    "date": 1710597163740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n const App = (props) => {\n   const [notes, setNotes] = useState(props.notes);\n   const [newNode, setNewNote] = useState('a new note...');\n-  con\n+  const \n   const addNode = (event) => {\n     event.preventDefault();\n     const noteObject = {\n       content: newNode,\n"
+                },
+                {
+                    "date": 1710597667957,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n   return (\n     <div>\n       <h1>Notes</h1>\n       <div>\n-        <button \n+        <button onC\n       </div>\n       <ul>\n         {notesToShow.map((note) => (\n           <Note key={note.id} note={note} />\n"
                 }
             ],
             "date": 1710595140895,
