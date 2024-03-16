@@ -1,0 +1,206 @@
+{
+    "sourceFile": "src/App.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 47,
+            "patches": [
+                {
+                    "date": 1710595140895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1710595210754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { useState } from 'react';\n import Note from './components/Note';\n \n-const App = ({ notes }) => {\n+const App = (p) => {\n   const [notes, setNotes] = useState(notes);\n \n   const addNode = (event) => {\n     event.preventDefault();\n"
+                },
+                {
+                    "date": 1710595231959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { useState } from 'react';\n import Note from './components/Note';\n \n-const App = (p) => {\n-  const [notes, setNotes] = useState(notes);\n+const App = (props) => {\n+  const [notes, setNotes] = useState(props.notes);\n \n   const addNode = (event) => {\n     event.preventDefault();\n     console.log('button clicked', event.target);\n"
+                },
+                {
+                    "date": 1710595242026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n         {notes.map((note) => (\n           <Note key={note.id} note={note} />\n         ))}\n       </ul>\n+      <\n     </div>\n   );\n };\n \n"
+                },
+                {
+                    "date": 1710595248702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         {notes.map((note) => (\n           <Note key={note.id} note={note} />\n         ))}\n       </ul>\n-      <\n+      <form on\n     </div>\n   );\n };\n \n"
+                },
+                {
+                    "date": 1710595370546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         {notes.map((note) => (\n           <Note key={note.id} note={note} />\n         ))}\n       </ul>\n-      <form on\n+      <form onSubmit={add}\n     </div>\n   );\n };\n \n"
+                },
+                {
+                    "date": 1710595376587,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,11 @@\n         {notes.map((note) => (\n           <Note key={note.id} note={note} />\n         ))}\n       </ul>\n-      <form onSubmit={add}\n+      <form onSubmit={addNode}>\n+        <\n+      </form>\n     </div>\n   );\n };\n \n"
+                },
+                {
+                    "date": 1710595382078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n           <Note key={note.id} note={note} />\n         ))}\n       </ul>\n       <form onSubmit={addNode}>\n-        <\n+        <input />\n       </form>\n     </div>\n   );\n };\n"
+                },
+                {
+                    "date": 1710595391367,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n         ))}\n       </ul>\n       <form onSubmit={addNode}>\n         <input />\n+        <button \n       </form>\n     </div>\n   );\n };\n"
+                },
+                {
+                    "date": 1710595397554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n         ))}\n       </ul>\n       <form onSubmit={addNode}>\n         <input />\n-        <button \n+        <button type=\"\"\n       </form>\n     </div>\n   );\n };\n"
+                },
+                {
+                    "date": 1710595405057,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n         ))}\n       </ul>\n       <form onSubmit={addNode}>\n         <input />\n-        <button type=\"\"\n+        <button type=\"submit\">save</button>\n       </form>\n     </div>\n   );\n };\n"
+                },
+                {
+                    "date": 1710595857023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,13 +2,13 @@\n import Note from './components/Note';\n \n const App = (props) => {\n   const [notes, setNotes] = useState(props.notes);\n-\n+  \n   const addNode = (event) => {\n     event.preventDefault();\n     console.log('button clicked', event.target);\n-  }\n+  };\n   console.log(notes);\n   return (\n     <div>\n       <h1>Notes</h1>\n"
+                },
+                {
+                    "date": 1710595870749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import Note from './components/Note';\n \n const App = (props) => {\n   const [notes, setNotes] = useState(props.notes);\n-  \n+  const [newNode, setNew]\n   const addNode = (event) => {\n     event.preventDefault();\n     console.log('button clicked', event.target);\n   };\n"
+                },
+                {
+                    "date": 1710595877422,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import Note from './components/Note';\n \n const App = (props) => {\n   const [notes, setNotes] = useState(props.notes);\n-  const [newNode, setNew]\n+  const [newNode, setNewNote] = \n   const addNode = (event) => {\n     event.preventDefault();\n     console.log('button clicked', event.target);\n   };\n"
+                },
+                {
+                    "date": 1710595886629,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,11 @@\n import Note from './components/Note';\n \n const App = (props) => {\n   const [notes, setNotes] = useState(props.notes);\n-  const [newNode, setNewNote] = \n+  const [newNode, setNewNote] = useState(\n+    \n+  )\n   const addNode = (event) => {\n     event.preventDefault();\n     console.log('button clicked', event.target);\n   };\n"
+                },
+                {
+                    "date": 1710595945221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,11 +2,9 @@\n import Note from './components/Note';\n \n const App = (props) => {\n   const [notes, setNotes] = useState(props.notes);\n-  const [newNode, setNewNote] = useState(\n-    \n-  )\n+  const [newNode, setNewNote] = useState('a new note...');\n   const addNode = (event) => {\n     event.preventDefault();\n     console.log('button clicked', event.target);\n   };\n@@ -19,9 +17,9 @@\n           <Note key={note.id} note={note} />\n         ))}\n       </ul>\n       <form onSubmit={addNode}>\n-        <input />\n+        <input va/>\n         <button type=\"submit\">save</button>\n       </form>\n     </div>\n   );\n"
+                },
+                {
+                    "date": 1710595951578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n           <Note key={note.id} note={note} />\n         ))}\n       </ul>\n       <form onSubmit={addNode}>\n-        <input va/>\n+        <input value={newNode} />\n         <button type=\"submit\">save</button>\n       </form>\n     </div>\n   );\n"
+                },
+                {
+                    "date": 1710596027408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n   const addNode = (event) => {\n     event.preventDefault();\n     console.log('button clicked', event.target);\n   };\n+\n   console.log(notes);\n   return (\n     <div>\n       <h1>Notes</h1>\n"
+                },
+                {
+                    "date": 1710596037139,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,15 @@\n \n const App = (props) => {\n   const [notes, setNotes] = useState(props.notes);\n   const [newNode, setNewNote] = useState('a new note...');\n+\n   const addNode = (event) => {\n     event.preventDefault();\n     console.log('button clicked', event.target);\n   };\n \n+  con\n   console.log(notes);\n   return (\n     <div>\n       <h1>Notes</h1>\n"
+                },
+                {
+                    "date": 1710596056938,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,10 @@\n     event.preventDefault();\n     console.log('button clicked', event.target);\n   };\n \n-  con\n+  const handleNoteChange = (event) => {\n+    \n   console.log(notes);\n   return (\n     <div>\n       <h1>Notes</h1>\n"
+                },
+                {
+                    "date": 1710596064471,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,10 +10,13 @@\n     console.log('button clicked', event.target);\n   };\n \n   const handleNoteChange = (event) => {\n-    \n-  console.log(notes);\n+    console.log(event.target.value);\n+    setNewNote(event.target.value);\n+  }\n+\n+  \n   return (\n     <div>\n       <h1>Notes</h1>\n       <ul>\n"
+                },
+                {
+                    "date": 1710596078786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     console.log(event.target.value);\n     setNewNote(event.target.value);\n   }\n \n-  \n+  // console.log(notes);\n   return (\n     <div>\n       <h1>Notes</h1>\n       <ul>\n@@ -24,9 +24,10 @@\n           <Note key={note.id} note={note} />\n         ))}\n       </ul>\n       <form onSubmit={addNode}>\n-        <input value={newNode} />\n+        <input value={newNode}\n+        />\n         <button type=\"submit\">save</button>\n       </form>\n     </div>\n   );\n"
+                },
+                {
+                    "date": 1710596087950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,11 @@\n           <Note key={note.id} note={note} />\n         ))}\n       </ul>\n       <form onSubmit={addNode}>\n-        <input value={newNode}\n+        <input\n+        value={newNode}\n+        onCh\n         />\n         <button type=\"submit\">save</button>\n       </form>\n     </div>\n"
+                },
+                {
+                    "date": 1710596093601,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \n   const handleNoteChange = (event) => {\n     console.log(event.target.value);\n     setNewNote(event.target.value);\n-  }\n+  };\n \n   // console.log(notes);\n   return (\n     <div>\n@@ -24,12 +24,9 @@\n           <Note key={note.id} note={note} />\n         ))}\n       </ul>\n       <form onSubmit={addNode}>\n-        <input\n-        value={newNode}\n-        onCh\n-        />\n+        <input value={newNode} onChange={handleNoteChange} />\n         <button type=\"submit\">save</button>\n       </form>\n     </div>\n   );\n"
+                },
+                {
+                    "date": 1710596100740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n           <Note key={note.id} note={note} />\n         ))}\n       </ul>\n       <form onSubmit={addNode}>\n-        <input value={newNode} onChange={handleNoteChange} />\n+        <input value={newNode} onChange={handleNoteChange}>\n         <button type=\"submit\">save</button>\n       </form>\n     </div>\n   );\n"
+                },
+                {
+                    "date": 1710596107851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n           <Note key={note.id} note={note} />\n         ))}\n       </ul>\n       <form onSubmit={addNode}>\n-        <input value={newNode} onChange={handleNoteChange}>\n+        <input value={newNode} onChange={handleNoteChange}><input\n         <button type=\"submit\">save</button>\n       </form>\n     </div>\n   );\n"
+                },
+                {
+                    "date": 1710596121397,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n           <Note key={note.id} note={note} />\n         ))}\n       </ul>\n       <form onSubmit={addNode}>\n-        <input value={newNode} onChange={handleNoteChange}><input\n+        <input value={newNode} onChange={handleNoteChange}/>\n         <button type=\"submit\">save</button>\n       </form>\n     </div>\n   );\n"
+                },
+                {
+                    "date": 1710596200553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n           <Note key={note.id} note={note} />\n         ))}\n       </ul>\n       <form onSubmit={addNode}>\n-        <input value={newNode} onChange={handleNoteChange}/>\n+        <input value={'a new note...'} onChange={handleNoteChange} />\n         <button type=\"submit\">save</button>\n       </form>\n     </div>\n   );\n"
+                },
+                {
+                    "date": 1710596220661,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n           <Note key={note.id} note={note} />\n         ))}\n       </ul>\n       <form onSubmit={addNode}>\n-        <input value={'a new note...'} onChange={handleNoteChange} />\n+        <input value={newNode} onChange={handleNoteChange} />\n         <button type=\"submit\">save</button>\n       </form>\n     </div>\n   );\n"
+                },
+                {
+                    "date": 1710596639549,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n   const [newNode, setNewNote] = useState('a new note...');\n \n   const addNode = (event) => {\n     event.preventDefault();\n+    \n     console.log('button clicked', event.target);\n   };\n \n   const handleNoteChange = (event) => {\n"
+                },
+                {
+                    "date": 1710596644978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   const [newNode, setNewNote] = useState('a new note...');\n \n   const addNode = (event) => {\n     event.preventDefault();\n-    \n+    const note\n     console.log('button clicked', event.target);\n   };\n \n   const handleNoteChange = (event) => {\n"
+                },
+                {
+                    "date": 1710596651318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,11 @@\n   const [newNode, setNewNote] = useState('a new note...');\n \n   const addNode = (event) => {\n     event.preventDefault();\n-    const note\n+    const noteObject = {\n+      \n+    }\n     console.log('button clicked', event.target);\n   };\n \n   const handleNoteChange = (event) => {\n"
+                },
+                {
+                    "date": 1710596658412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n   const addNode = (event) => {\n     event.preventDefault();\n     const noteObject = {\n-      \n+      content\n     }\n     console.log('button clicked', event.target);\n   };\n \n"
+                },
+                {
+                    "date": 1710596664105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,10 @@\n \n   const addNode = (event) => {\n     event.preventDefault();\n     const noteObject = {\n-      content\n+      content: newNode,\n+      \n     }\n     console.log('button clicked', event.target);\n   };\n \n"
+                },
+                {
+                    "date": 1710596669388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n   const addNode = (event) => {\n     event.preventDefault();\n     const noteObject = {\n       content: newNode,\n-      \n+      date: new \n     }\n     console.log('button clicked', event.target);\n   };\n \n"
+                },
+                {
+                    "date": 1710596680667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n   const addNode = (event) => {\n     event.preventDefault();\n     const noteObject = {\n       content: newNode,\n-      date: new \n+      date: new Date().to\n     }\n     console.log('button clicked', event.target);\n   };\n \n"
+                },
+                {
+                    "date": 1710596687990,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n   const addNode = (event) => {\n     event.preventDefault();\n     const noteObject = {\n       content: newNode,\n-      date: new Date().to\n+      date: new Date().toISOString()\n     }\n     console.log('button clicked', event.target);\n   };\n \n"
+                },
+                {
+                    "date": 1710596708666,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,10 @@\n   const addNode = (event) => {\n     event.preventDefault();\n     const noteObject = {\n       content: newNode,\n-      date: new Date().toISOString()\n+      date: new Date().toISOString(),\n+      imp\n     }\n     console.log('button clicked', event.target);\n   };\n \n"
+                },
+                {
+                    "date": 1710596719053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     event.preventDefault();\n     const noteObject = {\n       content: newNode,\n       date: new Date().toISOString(),\n-      imp\n+      important: Math.random()\n     }\n     console.log('button clicked', event.target);\n   };\n \n"
+                },
+                {
+                    "date": 1710596727269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,10 @@\n     event.preventDefault();\n     const noteObject = {\n       content: newNode,\n       date: new Date().toISOString(),\n-      important: Math.random()\n+      important: Math.random() < 0.5,\n+      id: \n     }\n     console.log('button clicked', event.target);\n   };\n \n"
+                },
+                {
+                    "date": 1710596734289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     const noteObject = {\n       content: newNode,\n       date: new Date().toISOString(),\n       important: Math.random() < 0.5,\n-      id: \n+      id: notes.leng\n     }\n     console.log('button clicked', event.target);\n   };\n \n"
+                },
+                {
+                    "date": 1710596740937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,10 +10,10 @@\n     const noteObject = {\n       content: newNode,\n       date: new Date().toISOString(),\n       important: Math.random() < 0.5,\n-      id: notes.leng\n-    }\n+      id: notes.length + 1,\n+    };\n     console.log('button clicked', event.target);\n   };\n \n   const handleNoteChange = (event) => {\n"
+                },
+                {
+                    "date": 1710596766093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n       date: new Date().toISOString(),\n       important: Math.random() < 0.5,\n       id: notes.length + 1,\n     };\n+    \n     console.log('button clicked', event.target);\n   };\n \n   const handleNoteChange = (event) => {\n"
+                },
+                {
+                    "date": 1710596771830,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n       date: new Date().toISOString(),\n       important: Math.random() < 0.5,\n       id: notes.length + 1,\n     };\n-    \n+    setNotes\n     console.log('button clicked', event.target);\n   };\n \n   const handleNoteChange = (event) => {\n"
+                },
+                {
+                    "date": 1710596778378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n       date: new Date().toISOString(),\n       important: Math.random() < 0.5,\n       id: notes.length + 1,\n     };\n-    setNotes\n+    setNotes(notes.c)\n     console.log('button clicked', event.target);\n   };\n \n   const handleNoteChange = (event) => {\n"
+                },
+                {
+                    "date": 1710596785934,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n       date: new Date().toISOString(),\n       important: Math.random() < 0.5,\n       id: notes.length + 1,\n     };\n-    setNotes(notes.c)\n+    setNotes(notes.concat)\n     console.log('button clicked', event.target);\n   };\n \n   const handleNoteChange = (event) => {\n"
+                },
+                {
+                    "date": 1710596792937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,10 @@\n       date: new Date().toISOString(),\n       important: Math.random() < 0.5,\n       id: notes.length + 1,\n     };\n-    setNotes(notes.concat)\n+    setNotes(notes.concat(noteObject));\n+    setNewNote\n     console.log('button clicked', event.target);\n   };\n \n   const handleNoteChange = (event) => {\n"
+                },
+                {
+                    "date": 1710596799107,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n       important: Math.random() < 0.5,\n       id: notes.length + 1,\n     };\n     setNotes(notes.concat(noteObject));\n-    setNewNote\n+    setNewNote('');\n     console.log('button clicked', event.target);\n   };\n \n   const handleNoteChange = (event) => {\n"
+                }
+            ],
+            "date": 1710595140895,
+            "name": "Commit-0",
+            "content": "import { useState } from 'react';\nimport Note from './components/Note';\n\nconst App = ({ notes }) => {\n  const [notes, setNotes] = useState(notes);\n\n  const addNode = (event) => {\n    event.preventDefault();\n    console.log('button clicked', event.target);\n  }\n  console.log(notes);\n  return (\n    <div>\n      <h1>Notes</h1>\n      <ul>\n        {notes.map((note) => (\n          <Note key={note.id} note={note} />\n        ))}\n      </ul>\n    </div>\n  );\n};\n\nexport default App;\n"
+        }
+    ]
+}
