@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 7,
+            "activePatchIndex": 28,
             "patches": [
                 {
                     "date": 1710645278757,
@@ -36,6 +36,90 @@
                 {
                     "date": 1710645435130,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n import Name from './components/Name';\n \n // Search the person\n const searchPerson = (event) => {\n-    return Persons.filter((p) =>\n-      p.name.toLowerCase().includes(event.toLowerCase())\n-    );\n-  };\n+  return Persons.filter((p) =>\n+    p.name.toLowerCase().includes(event.toLowerCase())\n+  );\n+};\n \n const Persons = ({ persons, showAll, filterWord }) => {\n   const personsToShow = showAll ? persons : searchPerson(filterWord);\n \n"
+                },
+                {
+                    "date": 1710666815127,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     p.name.toLowerCase().includes(event.toLowerCase())\n   );\n };\n \n-const Persons = ({ persons, showAll, filterWord }) => {\n+const Persons = ({ props }) => {\n   const personsToShow = showAll ? persons : searchPerson(filterWord);\n \n   return (\n     <div>\n"
+                },
+                {
+                    "date": 1710666820851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,17 +7,7 @@\n   );\n };\n \n const Persons = ({ props }) => {\n-  const personsToShow = showAll ? persons : searchPerson(filterWord);\n+  \n \n-  return (\n-    <div>\n-      <h2>Numbers</h2>\n-      {personsToShow.map((person) => (\n-        <Name key={person.name} person={person} />\n-      ))}\n-    </div>\n-  );\n-};\n-\n export default Persons;\n"
+                },
+                {
+                    "date": 1710667097569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,14 @@\n   );\n };\n \n const Persons = ({ props }) => {\n-  \n+  return (\n+    <div>\n+      {props.persons.map((person) => (\n+        <Name key={person.id} person={person} />\n+      ))}\n+    </div>\n+  );\n+}\n \n export default Persons;\n"
+                },
+                {
+                    "date": 1710667404007,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import Name from './components/Name';\n+import {Name} from './components/Name';\n \n // Search the person\n const searchPerson = (event) => {\n   return Persons.filter((p) =>\n@@ -14,7 +14,7 @@\n         <Name key={person.id} person={person} />\n       ))}\n     </div>\n   );\n-}\n+};\n \n export default Persons;\n"
+                },
+                {
+                    "date": 1710667427602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import {Name} from './components/Name';\n+import  Name  from './components/Name';\n \n // Search the person\n const searchPerson = (event) => {\n   return Persons.filter((p) =>\n"
+                },
+                {
+                    "date": 1710667434372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import  Name  from './components/Name';\n+import \n \n // Search the person\n const searchPerson = (event) => {\n   return Persons.filter((p) =>\n"
+                },
+                {
+                    "date": 1710667440663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n-import \n+import React from \"react\";\n \n+\n // Search the person\n const searchPerson = (event) => {\n   return Persons.filter((p) =>\n     p.name.toLowerCase().includes(event.toLowerCase())\n"
+                },
+                {
+                    "date": 1710667494621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,15 @@\n-import React from \"react\";\n+import React from 'react';\n+import Name from './Name';\n \n-\n // Search the person\n const searchPerson = (event) => {\n   return Persons.filter((p) =>\n     p.name.toLowerCase().includes(event.toLowerCase())\n   );\n };\n \n+\n const Persons = ({ props }) => {\n   return (\n     <div>\n       {props.persons.map((person) => (\n"
+                },
+                {
+                    "date": 1710667502646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,7 @@\n import React from 'react';\n import Name from './Name';\n \n-// Search the person\n-const searchPerson = (event) => {\n-  return Persons.filter((p) =>\n-    p.name.toLowerCase().includes(event.toLowerCase())\n-  );\n-};\n \n \n const Persons = ({ props }) => {\n   return (\n"
+                },
+                {
+                    "date": 1710667849269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,14 @@\n import React from 'react';\n import Name from './Name';\n \n-\n-\n-const Persons = ({ props }) => {\n+const Persons = ({ personsToShow }) => {\n   return (\n     <div>\n-      {props.persons.map((person) => (\n-        <Name key={person.id} person={person} />\n+      {personsToShow.map(person => (\n+        <div key={person.id}>\n+          {person.name} {person.number}\n+        </div>\n       ))}\n     </div>\n   );\n };\n"
+                },
+                {
+                    "date": 1710667884949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react';\n-import Name from './Name';\n \n+\n const Persons = ({ personsToShow }) => {\n   return (\n     <div>\n       {personsToShow.map(person => (\n"
+                },
+                {
+                    "date": 1710670845458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   return (\n     <div>\n       {personsToShow.map(person => (\n         <div key={person.id}>\n-          {person.name} {person.number}\n+          <p></p>{person.name} {person.number}\n         </div>\n       ))}\n     </div>\n   );\n"
+                },
+                {
+                    "date": 1710675536712,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,14 @@\n import React from 'react';\n \n-\n-const Persons = ({ personsToShow }) => {\n+const Persons = (personsToShow) => {\n   return (\n     <div>\n-      {personsToShow.map(person => (\n+      {personsToShow.map((person) => (\n         <div key={person.id}>\n-          <p></p>{person.name} {person.number}\n+          <p>\n+            {person.name} {person.number}\n+          </p>\n         </div>\n       ))}\n     </div>\n   );\n"
+                },
+                {
+                    "date": 1710675546462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react';\n \n-const Persons = (personsToShow) => {\n+const Persons = ({ personsToShow }) => {\n   return (\n     <div>\n       {personsToShow.map((person) => (\n         <div key={person.id}>\n"
+                },
+                {
+                    "date": 1710675556001,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,7 @@\n import React from 'react';\n \n const Persons = ({ personsToShow }) => {\n-  return (\n-    <div>\n-      {personsToShow.map((person) => (\n-        <div key={person.id}>\n-          <p>\n-            {person.name} {person.number}\n-          </p>\n-        </div>\n-      ))}\n-    </div>\n-  );\n+  return \n };\n \n export default Persons;\n"
+                },
+                {
+                    "date": 1710675562399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,15 @@\n import React from 'react';\n \n const Persons = ({ personsToShow }) => {\n-  return \n+  return (\n+    <div>\n+      {personsToShow.map((person) => (\n+        <p key={person.name}>\n+          {person.name} {person.number}\n+        </p>\n+      ))}\n+    </div>\n+  )\n };\n \n export default Persons;\n"
+                },
+                {
+                    "date": 1710675570788,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,7 @@\n import React from 'react';\n \n const Persons = ({ personsToShow }) => {\n-  return (\n-    <div>\n-      {personsToShow.map((person) => (\n-        <p key={person.name}>\n-          {person.name} {person.number}\n-        </p>\n-      ))}\n-    </div>\n-  )\n+  return\n };\n \n export default Persons;\n"
+                },
+                {
+                    "date": 1710675696212,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,15 @@\n import React from 'react';\n \n const Persons = ({ personsToShow }) => {\n-  return\n+  return (\n+    <div>\n+      {personsToShow.map((person) => (\n+        <p key={person.name}>\n+          {person.name} {person.number}\n+        </p>\n+      ))}\n+    </div>\n+  )\n };\n \n export default Persons;\n"
+                },
+                {
+                    "date": 1710678223967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,17 @@\n-import React from 'react';\n-\n-const Persons = ({ personsToShow }) => {\n+const PersonForm = ({ addPerson, newName, handleNameChange, newNumber, handleNumberChange }) => {\n   return (\n-    <div>\n-      {personsToShow.map((person) => (\n-        <p key={person.name}>\n-          {person.name} {person.number}\n-        </p>\n-      ))}\n-    </div>\n-  )\n+    <form onSubmit={addPerson}>\n+      <div>\n+        name: <input value={newName} onChange={handleNameChange} />\n+      </div>\n+      <div>\n+        number: <input value={newNumber} onChange={handleNumberChange} />\n+      </div>\n+      <div>\n+        <button type=\"submit\">add</button>\n+      </div>\n+    </form>\n+  );\n };\n \n-export default Persons;\n+export default PersonForm;\n"
+                },
+                {
+                    "date": 1710678233075,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +0,0 @@\n-const PersonForm = ({ addPerson, newName, handleNameChange, newNumber, handleNumberChange }) => {\n-  return (\n-    <form onSubmit={addPerson}>\n-      <div>\n-        name: <input value={newName} onChange={handleNameChange} />\n-      </div>\n-      <div>\n-        number: <input value={newNumber} onChange={handleNumberChange} />\n-      </div>\n-      <div>\n-        <button type=\"submit\">add</button>\n-      </div>\n-    </form>\n-  );\n-};\n-\n-export default PersonForm;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1710678276304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,13 @@\n+const Persons = ({ personsToShow }) => {\n+  return (\n+    <div>\n+      {personsToShow.map((person) => (\n+        <div key={person.id}>\n+          {person.name} {person.number}\n+        </div>\n+      ))}\n+    </div>\n+  );\n+};\n \n+export default Persons;\n"
                 }
             ],
             "date": 1710645278757,

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 31,
+            "activePatchIndex": 53,
             "patches": [
                 {
                     "date": 1710644688083,
@@ -132,6 +132,94 @@
                 {
                     "date": 1710646381522,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,13 @@\n-\n+const PersonForm = ({ addPerson, newName, handleNameChange, newNumber, handleNumberChange }) => (\n+    <form onSubmit={addPerson}>\n+      <div>\n+        name: <input value={newName} onChange={handleNameChange} />\n+      </div>\n+      <div>\n+        number: <input value={newNumber} onChange={handleNumberChange} />\n+      </div>\n+      <div>\n+        <button type=\"submit\">add</button>\n+      </div>\n+    </form>\n+  );\n"
+                },
+                {
+                    "date": 1710666730420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-const PersonForm = ({ addPerson, newName, handleNameChange, newNumber, handleNumberChange }) => (\n+const PersonForm = ({ props }) => (\n     <form onSubmit={addPerson}>\n       <div>\n         name: <input value={newName} onChange={handleNameChange} />\n       </div>\n"
+                },
+                {
+                    "date": 1710666737068,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const PersonForm = ({ props }) => (\n-    <form onSubmit={addPerson}>\n+    <form onSubmit={props.addPerson}>\n       <div>\n         name: <input value={newName} onChange={handleNameChange} />\n       </div>\n       <div>\n"
+                },
+                {
+                    "date": 1710666742217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,3 @@\n const PersonForm = ({ props }) => (\n-    <form onSubmit={props.addPerson}>\n-      <div>\n-        name: <input value={newName} onChange={handleNameChange} />\n-      </div>\n-      <div>\n-        number: <input value={newNumber} onChange={handleNumberChange} />\n-      </div>\n-      <div>\n-        <button type=\"submit\">add</button>\n-      </div>\n-    </form>\n+\n   );\n"
+                },
+                {
+                    "date": 1710666748003,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,1 @@\n-const PersonForm = ({ props }) => (\n-\n-  );\n+const PersonForm = ({ props }) => \n"
+                },
+                {
+                    "date": 1710666753509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,15 @@\n-const PersonForm = ({ props }) => \n+const PersonForm = ({ props }) => {\n+  return (\n+    <form onSubmit={props.addPerson}>\n+      <div>\n+        name: <input value={props.newName} onChange={props.handleNameChange} />\n+      </div>\n+      <div>\n+        number: <input value={props.newNumber} onChange={props.handleNumberChange} />\n+      </div>\n+      <div>\n+        <button type=\"submit\">add</button>\n+      </div>\n+    </form>\n+  );\n+}\n"
+                },
+                {
+                    "date": 1710666760236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,12 +4,15 @@\n       <div>\n         name: <input value={props.newName} onChange={props.handleNameChange} />\n       </div>\n       <div>\n-        number: <input value={props.newNumber} onChange={props.handleNumberChange} />\n+        number:{' '}\n+        <input value={props.newNumber} onChange={props.handleNumberChange} />\n       </div>\n       <div>\n         <button type=\"submit\">add</button>\n       </div>\n     </form>\n   );\n-}\n+};\n+\n+export \n"
+                },
+                {
+                    "date": 1710666767034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+import { getDefaultNormalizer } from \"@testing-library/react\";\n+\n const PersonForm = ({ props }) => {\n   return (\n     <form onSubmit={props.addPerson}>\n       <div>\n@@ -14,5 +16,5 @@\n     </form>\n   );\n };\n \n-export \n+export getDefaultNormalizer\n"
+                },
+                {
+                    "date": 1710666773039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,4 @@\n-import { getDefaultNormalizer } from \"@testing-library/react\";\n-\n const PersonForm = ({ props }) => {\n   return (\n     <form onSubmit={props.addPerson}>\n       <div>\n@@ -16,5 +14,5 @@\n     </form>\n   );\n };\n \n-export getDefaultNormalizer\n+export default \n"
+                },
+                {
+                    "date": 1710667462300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+\n const PersonForm = ({ props }) => {\n   return (\n     <form onSubmit={props.addPerson}>\n       <div>\n@@ -14,5 +15,5 @@\n     </form>\n   );\n };\n \n-export default \n+export default PersonForm;\n"
+                },
+                {
+                    "date": 1710667468154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+import React from 'react';\n \n const PersonForm = ({ props }) => {\n   return (\n     <form onSubmit={props.addPerson}>\n"
+                },
+                {
+                    "date": 1710667585248,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n       <div>\n         name: <input value={props.newName} onChange={props.handleNameChange} />\n       </div>\n       <div>\n-        number:{' '}\n+        number:\n         <input value={props.newNumber} onChange={props.handleNumberChange} />\n       </div>\n       <div>\n         <button type=\"submit\">add</button>\n"
+                },
+                {
+                    "date": 1710667860037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,14 @@\n import React from 'react';\n \n-const PersonForm = ({ props }) => {\n+const PersonForm = ({ addPerson, newName, handleNameChange, newNumber, handleNumberChange }) => {\n   return (\n-    <form onSubmit={props.addPerson}>\n+    <form onSubmit={addPerson}>\n       <div>\n-        name: <input value={props.newName} onChange={props.handleNameChange} />\n+        name: <input value={newName} onChange={handleNameChange} />\n       </div>\n       <div>\n-        number:\n-        <input value={props.newNumber} onChange={props.handleNumberChange} />\n+        number: <input value={newNumber} onChange={handleNumberChange} />\n       </div>\n       <div>\n         <button type=\"submit\">add</button>\n       </div>\n"
+                },
+                {
+                    "date": 1710671022219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,9 @@\n import React from 'react';\n \n+\n+\n+\n const PersonForm = ({ addPerson, newName, handleNameChange, newNumber, handleNumberChange }) => {\n   return (\n     <form onSubmit={addPerson}>\n       <div>\n"
+                },
+                {
+                    "date": 1710671041590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,9 @@\n import React from 'react';\n \n+// const [persons, setPersons] = useState([]);\n+// const [newName, setNewName] = useState('');\n+// const [newNumber, setNewNumber] = useState('');\n \n \n \n const PersonForm = ({ addPerson, newName, handleNameChange, newNumber, handleNumberChange }) => {\n"
+                },
+                {
+                    "date": 1710671052847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import React from 'react';\n+import \n \n-// const [persons, setPersons] = useState([]);\n-// const [newName, setNewName] = useState('');\n-// const [newNumber, setNewNumber] = useState('');\n+const [persons, setPersons] = useState([]);\n+const [newName, setNewName] = useState('');\n+const [newNumber, setNewNumber] = useState('');\n \n \n \n const PersonForm = ({ addPerson, newName, handleNameChange, newNumber, handleNumberChange }) => {\n"
+                },
+                {
+                    "date": 1710671058086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from 'react';\n-import \n+import { user}\n \n const [persons, setPersons] = useState([]);\n const [newName, setNewName] = useState('');\n const [newNumber, setNewNumber] = useState('');\n"
+                },
+                {
+                    "date": 1710671063708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from 'react';\n-import { user}\n+import { use }\n \n const [persons, setPersons] = useState([]);\n const [newName, setNewName] = useState('');\n const [newNumber, setNewNumber] = useState('');\n"
+                },
+                {
+                    "date": 1710671094159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,16 @@\n import React from 'react';\n-import { use }\n+import { useState } from 'react';\n \n-const [persons, setPersons] = useState([]);\n-const [newName, setNewName] = useState('');\n-const [newNumber, setNewNumber] = useState('');\n \n \n-\n-const PersonForm = ({ addPerson, newName, handleNameChange, newNumber, handleNumberChange }) => {\n+const PersonForm = ({\n+  addPerson,\n+  newName,\n+  handleNameChange,\n+  newNumber,\n+  handleNumberChange,\n+}) => {\n   return (\n     <form onSubmit={addPerson}>\n       <div>\n         name: <input value={newName} onChange={handleNameChange} />\n"
+                },
+                {
+                    "date": 1710671099734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,11 @@\n   handleNameChange,\n   newNumber,\n   handleNumberChange,\n }) => {\n+  const [persons, setPersons] = useState([]);\n+const [newName, setNewName] = useState('');\n+const [newNumber, setNewNumber] = useState('');F\n   return (\n     <form onSubmit={addPerson}>\n       <div>\n         name: <input value={newName} onChange={handleNameChange} />\n"
+                },
+                {
+                    "date": 1710671115720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,19 +1,12 @@\n import React from 'react';\n import { useState } from 'react';\n \n-\n-\n const PersonForm = ({\n-  addPerson,\n-  newName,\n-  handleNameChange,\n-  newNumber,\n-  handleNumberChange,\n }) => {\n   const [persons, setPersons] = useState([]);\n-const [newName, setNewName] = useState('');\n-const [newNumber, setNewNumber] = useState('');F\n+  const [newName, setNewName] = useState('');\n+  const [newNumber, setNewNumber] = useState('');\n   return (\n     <form onSubmit={addPerson}>\n       <div>\n         name: <input value={newName} onChange={handleNameChange} />\n"
+                },
+                {
+                    "date": 1710671123005,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,5 +26,5 @@\n     </form>\n   );\n };\n \n-export default Perso\n\\ No newline at end of file\n+export default PersonForm;\n"
+                },
+                {
+                    "date": 1710671137379,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,13 +6,56 @@\n   const [newName, setNewName] = useState('');\n   const [newNumber, setNewNumber] = useState('');\n \n \n+  // add a new person to the phonebook\n+  const addPersons = (event) => {\n+    event.preventDefault();\n+    if (persons.some((p) => p.name === newName && p.number !== '')) {\n+      // debugger;\n+      return windowAlert(newName);\n+    } else if (\n+      // if no number but name in the phonebook\n+      persons.some((person) => person.name === newName && person.number === '')\n+    ) {\n+      // debugger;\n+      const person = persons.find((p) => p.name === newName);\n+      const id = person.id;\n+      const changePerson = { ...person, number: newNumber };\n+      setPersons(persons.map((p) => (p.id !== id ? p : changePerson)));\n+      return;\n+    } else {\n+      // create a object about person\n+      const personObject = {\n+        name: newName,\n+        number: newNumber,\n+        id: persons.length + 1,\n+      };\n+      // update persons\n+      setPersons(persons.concat(personObject));\n+      // Recovery\n+      setNewName('');\n+    }\n+  };\n \n+  // Change the value of newName\n+  const handleNameChange = (event) => {\n+    setNewName(event.target.value);\n+  };\n+  const handleNumberChange = (event) => {\n+    setNewNumber(event.target.value);\n+  };\n \n+  // Show alert\n+  const windowAlert = () => {\n+    return alert(`${newName} is already added to phonebook`);\n+  };\n \n \n \n+\n+\n+\n   return (\n     <form onSubmit={addPerson}>\n       <div>\n         name: <input value={newName} onChange={handleNameChange} />\n"
                 }
             ],
             "date": 1710644688083,

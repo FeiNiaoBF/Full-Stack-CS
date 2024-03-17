@@ -1,20 +1,10 @@
-import Name from './components/Name';
-
-// Search the person
-const searchPerson = (event) => {
-  return Persons.filter((p) =>
-    p.name.toLowerCase().includes(event.toLowerCase())
-  );
-};
-
-const Persons = ({ persons, showAll, filterWord }) => {
-  const personsToShow = showAll ? persons : searchPerson(filterWord);
-
+const Persons = ({ personsToShow }) => {
   return (
     <div>
-      <h2>Numbers</h2>
       {personsToShow.map((person) => (
-        <Name key={person.name} person={person} />
+        <div key={person.id}>
+          {person.name} {person.number}
+        </div>
       ))}
     </div>
   );

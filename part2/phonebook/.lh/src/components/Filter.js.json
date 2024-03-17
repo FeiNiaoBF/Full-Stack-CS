@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 22,
+            "activePatchIndex": 23,
             "patches": [
                 {
                     "date": 1710645100477,
@@ -96,6 +96,10 @@
                 {
                     "date": 1710646329532,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n   return (\n     <div>\n       Filter shown with{' '}\n-      <input value={props.value} onChange={props} />\n+      <input value={props.value} onChange={props.} />\n     </div>\n   );\n };\n \n"
+                },
+                {
+                    "date": 1710675176196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   return (\n     <div>\n       <form onSubmit={searchSubmit}>\n       Filter shown with <input value={filterWord} onChange={filterPerson} />\n-      \n+      <\n     </div>\n   );\n };\n \n"
                 }
             ],
             "date": 1710645100477,

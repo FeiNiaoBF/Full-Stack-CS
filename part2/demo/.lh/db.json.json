@@ -1,0 +1,22 @@
+{
+    "sourceFile": "db.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1710655916379,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1710655924901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,22 +1,22 @@\n {\n-    \"notes\": [\n-      {\n-        \"id\": 1,\n-        \"content\": \"HTML is easy\",\n-        \"date\": \"2022-1-17T17:30:31.098Z\",\n-        \"important\": true\n-      },\n-      {\n-        \"id\": 2,\n-        \"content\": \"Browser can execute only JavaScript\",\n-        \"date\": \"2022-1-17T18:39:34.091Z\",\n-        \"important\": false\n-      },\n-      {\n-        \"id\": 3,\n-        \"content\": \"GET and POST are the most important methods of HTTP protocol\",\n-        \"date\": \"2022-1-17T19:20:14.298Z\",\n-        \"important\": true\n-      }\n-    ]\n-  }\n+  \"notes\": [\n+    {\n+      \"id\": 1,\n+      \"content\": \"HTML is easy\",\n+      \"date\": \"2022-1-17T17:30:31.098Z\",\n+      \"important\": true\n+    },\n+    {\n+      \"id\": 2,\n+      \"content\": \"Browser can execute only JavaScript\",\n+      \"date\": \"2022-1-17T18:39:34.091Z\",\n+      \"important\": false\n+    },\n+    {\n+      \"id\": 3,\n+      \"content\": \"GET and POST are the most important methods of HTTP protocol\",\n+      \"date\": \"2022-1-17T19:20:14.298Z\",\n+      \"important\": true\n+    }\n+  ]\n+}\n"
+                }
+            ],
+            "date": 1710655916379,
+            "name": "Commit-0",
+            "content": "{\n    \"notes\": [\n      {\n        \"id\": 1,\n        \"content\": \"HTML is easy\",\n        \"date\": \"2022-1-17T17:30:31.098Z\",\n        \"important\": true\n      },\n      {\n        \"id\": 2,\n        \"content\": \"Browser can execute only JavaScript\",\n        \"date\": \"2022-1-17T18:39:34.091Z\",\n        \"important\": false\n      },\n      {\n        \"id\": 3,\n        \"content\": \"GET and POST are the most important methods of HTTP protocol\",\n        \"date\": \"2022-1-17T19:20:14.298Z\",\n        \"important\": true\n      }\n    ]\n  }\n"
+        }
+    ]
+}

@@ -3,11 +3,75 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 16,
             "patches": [
                 {
                     "date": 1710595147705,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1710660999281,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import React from 'react';\n import ReactDOM from 'react-dom/client';\n \n+\n import App from './App';\n \n const notes = [\n   {\n"
+                },
+                {
+                    "date": 1710661004913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react';\n import ReactDOM from 'react-dom/client';\n+import axios from 'axios';\n \n-\n import App from './App';\n \n const notes = [\n   {\n"
+                },
+                {
+                    "date": 1710661011151,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n import React from 'react';\n import ReactDOM from 'react-dom/client';\n import axios from 'axios';\n \n+\n+\n import App from './App';\n \n const notes = [\n   {\n"
+                },
+                {
+                    "date": 1710661016389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,7 @@\n import React from 'react';\n import ReactDOM from 'react-dom/client';\n import axios from 'axios';\n-\n-\n-\n import App from './App';\n \n const notes = [\n   {\n@@ -26,7 +23,10 @@\n     important: true,\n   },\n ];\n \n+\n+\n+\n ReactDOM.createRoot(document.getElementById('root')).render(\n   <App notes={notes} />\n );\n"
+                },
+                {
+                    "date": 1710661026105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,10 +23,10 @@\n     important: true,\n   },\n ];\n \n+const promise = \n \n \n-\n ReactDOM.createRoot(document.getElementById('root')).render(\n   <App notes={notes} />\n );\n"
+                },
+                {
+                    "date": 1710661032302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     important: true,\n   },\n ];\n \n-const promise = \n+const promise = axios.get('http://localhost:3001/notes');\n \n \n ReactDOM.createRoot(document.getElementById('root')).render(\n   <App notes={notes} />\n"
+                },
+                {
+                    "date": 1710661041358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,9 @@\n   },\n ];\n \n const promise = axios.get('http://localhost:3001/notes');\n+console.log();\n \n \n ReactDOM.createRoot(document.getElementById('root')).render(\n   <App notes={notes} />\n"
+                },
+                {
+                    "date": 1710661048037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,10 +24,11 @@\n   },\n ];\n \n const promise = axios.get('http://localhost:3001/notes');\n-console.log();\n+console.log(promise);\n \n+const p\n \n ReactDOM.createRoot(document.getElementById('root')).render(\n   <App notes={notes} />\n );\n"
+                },
+                {
+                    "date": 1710661054188,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n \n const promise = axios.get('http://localhost:3001/notes');\n console.log(promise);\n \n-const p\n+const promise2 = axios\n \n ReactDOM.createRoot(document.getElementById('root')).render(\n   <App notes={notes} />\n );\n"
+                },
+                {
+                    "date": 1710661059264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n \n const promise = axios.get('http://localhost:3001/notes');\n console.log(promise);\n \n-const promise2 = axios\n+const promise2 = axios.get('')\n \n ReactDOM.createRoot(document.getElementById('root')).render(\n   <App notes={notes} />\n );\n"
+                },
+                {
+                    "date": 1710661066733,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n \n const promise = axios.get('http://localhost:3001/notes');\n console.log(promise);\n \n-const promise2 = axios.get('')\n+const promise2 = axios.get('http://local')\n \n ReactDOM.createRoot(document.getElementById('root')).render(\n   <App notes={notes} />\n );\n"
+                },
+                {
+                    "date": 1710661074566,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n \n const promise = axios.get('http://localhost:3001/notes');\n console.log(promise);\n \n-const promise2 = axios.get('http://local')\n+const promise2 = axios.get('http://localhost:3001/foobar')\n \n ReactDOM.createRoot(document.getElementById('root')).render(\n   <App notes={notes} />\n );\n"
+                },
+                {
+                    "date": 1710661083949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,9 @@\n const promise = axios.get('http://localhost:3001/notes');\n console.log(promise);\n \n const promise2 = axios.get('http://localhost:3001/foobar')\n+console.log();\n \n ReactDOM.createRoot(document.getElementById('root')).render(\n   <App notes={notes} />\n );\n"
+                },
+                {
+                    "date": 1710661312254,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,10 +26,10 @@\n \n const promise = axios.get('http://localhost:3001/notes');\n console.log(promise);\n \n-const promise2 = axios.get('http://localhost:3001/foobar')\n-console.log();\n+// const promise2 = axios.get('http://localhost:3001/foobar');\n+// console.log(promise2);\n \n ReactDOM.createRoot(document.getElementById('root')).render(\n   <App notes={notes} />\n );\n"
+                },
+                {
+                    "date": 1710661322600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,10 +26,10 @@\n \n const promise = axios.get('http://localhost:3001/notes');\n console.log(promise);\n \n-// const promise2 = axios.get('http://localhost:3001/foobar');\n-// console.log(promise2);\n+const promise2 = axios.get('http://localhost:3001/foobar');\n+console.log(promise2);\n \n ReactDOM.createRoot(document.getElementById('root')).render(\n   <App notes={notes} />\n );\n"
+                },
+                {
+                    "date": 1710661470532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,9 @@\n \n const promise = axios.get('http://localhost:3001/notes');\n \n \n+\n const promise2 = axios.get('http://localhost:3001/foobar');\n console.log(promise2);\n \n ReactDOM.createRoot(document.getElementById('root')).render(\n"
                 }
             ],
             "date": 1710595147705,

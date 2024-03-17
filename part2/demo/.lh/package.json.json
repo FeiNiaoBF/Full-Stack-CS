@@ -1,0 +1,38 @@
+{
+    "sourceFile": "package.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1710660835350,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1710660842053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     \"start\": \"react-scripts start\",\n     \"build\": \"react-scripts build\",\n     \"test\": \"react-scripts test\",\n     \"eject\": \"react-scripts eject\"\n-    \"\"\n+    \"server\"\n   },\n   \"eslintConfig\": {\n     \"extends\": [\n       \"react-app\",\n"
+                },
+                {
+                    "date": 1710660850871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     \"start\": \"react-scripts start\",\n     \"build\": \"react-scripts build\",\n     \"test\": \"react-scripts test\",\n     \"eject\": \"react-scripts eject\"\n-    \"server\"\n+    \"server\": \"json-server -\"\n   },\n   \"eslintConfig\": {\n     \"extends\": [\n       \"react-app\",\n"
+                },
+                {
+                    "date": 1710660858173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     \"start\": \"react-scripts start\",\n     \"build\": \"react-scripts build\",\n     \"test\": \"react-scripts test\",\n     \"eject\": \"react-scripts eject\"\n-    \"server\": \"json-server -\"\n+    \"server\": \"json-server -p3001 --wathch \"\n   },\n   \"eslintConfig\": {\n     \"extends\": [\n       \"react-app\",\n"
+                },
+                {
+                    "date": 1710660865182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,10 @@\n   \"scripts\": {\n     \"start\": \"react-scripts start\",\n     \"build\": \"react-scripts build\",\n     \"test\": \"react-scripts test\",\n-    \"eject\": \"react-scripts eject\"\n-    \"server\": \"json-server -p3001 --wathch \"\n+    \"eject\": \"react-scripts eject\",\n+    \"server\": \"json-server -p3001 --wathch db.json\"\n   },\n   \"eslintConfig\": {\n     \"extends\": [\n       \"react-app\",\n"
+                },
+                {
+                    "date": 1710660885316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     \"start\": \"react-scripts start\",\n     \"build\": \"react-scripts build\",\n     \"test\": \"react-scripts test\",\n     \"eject\": \"react-scripts eject\",\n-    \"server\": \"json-server -p3001 --wathch db.json\"\n+    \"server\": \"json-server -p3001 --watch db.json\"\n   },\n   \"eslintConfig\": {\n     \"extends\": [\n       \"react-app\",\n"
+                }
+            ],
+            "date": 1710660835350,
+            "name": "Commit-0",
+            "content": "{\n  \"name\": \"demo\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"dependencies\": {\n    \"@testing-library/jest-dom\": \"^5.17.0\",\n    \"@testing-library/react\": \"^13.4.0\",\n    \"@testing-library/user-event\": \"^13.5.0\",\n    \"axios\": \"^1.6.8\",\n    \"npm\": \"^10.5.0\",\n    \"react\": \"^18.2.0\",\n    \"react-dom\": \"^18.2.0\",\n    \"react-scripts\": \"^5.0.1\",\n    \"web-vitals\": \"^2.1.4\"\n  },\n  \"scripts\": {\n    \"start\": \"react-scripts start\",\n    \"build\": \"react-scripts build\",\n    \"test\": \"react-scripts test\",\n    \"eject\": \"react-scripts eject\"\n    \"\"\n  },\n  \"eslintConfig\": {\n    \"extends\": [\n      \"react-app\",\n      \"react-app/jest\"\n    ]\n  },\n  \"browserslist\": {\n    \"production\": [\n      \">0.2%\",\n      \"not dead\",\n      \"not op_mini all\"\n    ],\n    \"development\": [\n      \"last 1 chrome version\",\n      \"last 1 firefox version\",\n      \"last 1 safari version\"\n    ]\n  },\n  \"devDependencies\": {\n    \"json-server\": \"^1.0.0-alpha.23\"\n  }\n}\n"
+        }
+    ]
+}
