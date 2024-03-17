@@ -1,0 +1,106 @@
+{
+    "sourceFile": "src/components/Filter.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 22,
+            "patches": [
+                {
+                    "date": 1710645100477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1710645107883,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,14 @@\n const [showAll, setShowAll] = useState(true);\n const [filterWord, setFilter] = useState('');\n \n+  // Search the person\n+  const searchPerson = (event) => {\n+    return persons.filter((p) =>\n+      p.name.toLowerCase().includes(event.toLowerCase())\n+    );\n+  };\n+\n+  const filterPerson = (event) => {\n+    setShowAll(event.target.value === '' ? true : false);\n+    setFilter(event.target.value);\n+  };\n"
+                },
+                {
+                    "date": 1710645117027,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,4 +11,8 @@\n   const filterPerson = (event) => {\n     setShowAll(event.target.value === '' ? true : false);\n     setFilter(event.target.value);\n   };\n+\n+    // Show all persons or search person\n+    const personsToShow = showAll ? persons : searchPerson(filterWord);\n+\n"
+                },
+                {
+                    "date": 1710645138801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +1,19 @@\n const [showAll, setShowAll] = useState(true);\n const [filterWord, setFilter] = useState('');\n \n-  // Search the person\n-  const searchPerson = (event) => {\n-    return persons.filter((p) =>\n-      p.name.toLowerCase().includes(event.toLowerCase())\n-    );\n-  };\n+// Search the person\n+const searchPerson = (event) => {\n+  return persons.filter((p) =>\n+    p.name.toLowerCase().includes(event.toLowerCase())\n+  );\n+};\n \n-  const filterPerson = (event) => {\n-    setShowAll(event.target.value === '' ? true : false);\n-    setFilter(event.target.value);\n-  };\n+const filterPerson = (event) => {\n+  setShowAll(event.target.value === '' ? true : false);\n+  setFilter(event.target.value);\n+};\n \n-    // Show all persons or search person\n-    const personsToShow = showAll ? persons : searchPerson(filterWord);\n+// Show all persons or search person\n+const personsToShow = showAll ? persons : searchPerson(filterWord);\n \n+const \n"
+                },
+                {
+                    "date": 1710645144456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,5 +15,5 @@\n \n // Show all persons or search person\n const personsToShow = showAll ? persons : searchPerson(filterWord);\n \n-const \n+const Filter\n"
+                },
+                {
+                    "date": 1710645154625,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,5 +15,9 @@\n \n // Show all persons or search person\n const personsToShow = showAll ? persons : searchPerson(filterWord);\n \n-const Filter\n+const Filter = () => {\n+    return (\n+        \n+    )\n+}\n"
+                },
+                {
+                    "date": 1710645166238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,7 +17,9 @@\n const personsToShow = showAll ? persons : searchPerson(filterWord);\n \n const Filter = () => {\n     return (\n-        \n+        <div>\n+             Filter shown with <input value={filterWord} onChange={filterPerson} />\n+        </div>\n     )\n }\n"
+                },
+                {
+                    "date": 1710645192964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,14 +12,12 @@\n   setShowAll(event.target.value === '' ? true : false);\n   setFilter(event.target.value);\n };\n \n-// Show all persons or search person\n-const personsToShow = showAll ? persons : searchPerson(filterWord);\n \n const Filter = () => {\n-    return (\n-        <div>\n-             Filter shown with <input value={filterWord} onChange={filterPerson} />\n-        </div>\n-    )\n-}\n+  return (\n+    <div>\n+      Filter shown with <input value={filterWord} onChange={filterPerson} />\n+    </div>\n+  );\n+};\n"
+                },
+                {
+                    "date": 1710645325362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,4 +20,6 @@\n       Filter shown with <input value={filterWord} onChange={filterPerson} />\n     </div>\n   );\n };\n+\n+export d\n"
+                },
+                {
+                    "date": 1710645331364,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,14 +12,13 @@\n   setShowAll(event.target.value === '' ? true : false);\n   setFilter(event.target.value);\n };\n \n-\n const Filter = () => {\n   return (\n     <div>\n       Filter shown with <input value={filterWord} onChange={filterPerson} />\n     </div>\n   );\n };\n \n-export d\n+export default Filter;\n"
+                },
+                {
+                    "date": 1710645368548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n-const [showAll, setShowAll] = useState(true);\n-const [filterWord, setFilter] = useState('');\n \n+\n // Search the person\n const searchPerson = (event) => {\n   return persons.filter((p) =>\n     p.name.toLowerCase().includes(event.toLowerCase())\n"
+                },
+                {
+                    "date": 1710645400916,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,4 @@\n-\n-\n // Search the person\n const searchPerson = (event) => {\n   return persons.filter((p) =>\n     p.name.toLowerCase().includes(event.toLowerCase())\n"
+                },
+                {
+                    "date": 1710645416844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,6 @@\n-// Search the person\n-const searchPerson = (event) => {\n-  return persons.filter((p) =>\n-    p.name.toLowerCase().includes(event.toLowerCase())\n-  );\n-};\n \n+\n const filterPerson = (event) => {\n   setShowAll(event.target.value === '' ? true : false);\n   setFilter(event.target.value);\n };\n"
+                },
+                {
+                    "date": 1710645695372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n+const [showAll, setShowAll] = useState(true);\n+const [filterWord, setFilter] = useState('');\n \n-\n const filterPerson = (event) => {\n   setShowAll(event.target.value === '' ? true : false);\n   setFilter(event.target.value);\n };\n"
+                },
+                {
+                    "date": 1710645782789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,9 @@\n const [showAll, setShowAll] = useState(true);\n const [filterWord, setFilter] = useState('');\n \n-const filterPerson = (event) => {\n-  setShowAll(event.target.value === '' ? true : false);\n-  setFilter(event.target.value);\n-};\n \n+\n const Filter = () => {\n   return (\n     <div>\n       Filter shown with <input value={filterWord} onChange={filterPerson} />\n"
+                },
+                {
+                    "date": 1710645798113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,12 @@\n const [showAll, setShowAll] = useState(true);\n const [filterWord, setFilter] = useState('');\n \n-\n-\n-const Filter = () => {\n+const Filter = (ㄋㄣ) => {\n+  const filterPerson = (event) => {\n+    setShowAll(event.target.value === '' ? true : false);\n+    setFilter(event.target.value);\n+  };\n   return (\n     <div>\n       Filter shown with <input value={filterWord} onChange={filterPerson} />\n     </div>\n"
+                },
+                {
+                    "date": 1710645810357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n const [showAll, setShowAll] = useState(true);\n const [filterWord, setFilter] = useState('');\n \n-const Filter = (ㄋㄣ) => {\n+const Filter = (props) => {\n   const filterPerson = (event) => {\n-    setShowAll(event.target.value === '' ? true : false);\n+    props.setShowAll(event.target.value === '' ? true : false);\n     setFilter(event.target.value);\n   };\n   return (\n     <div>\n"
+                },
+                {
+                    "date": 1710645820525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,9 @@\n-const [showAll, setShowAll] = useState(true);\n-const [filterWord, setFilter] = useState('');\n \n const Filter = (props) => {\n   const filterPerson = (event) => {\n     props.setShowAll(event.target.value === '' ? true : false);\n-    setFilter(event.target.value);\n+    props.setFilter(event.target.value);\n   };\n   return (\n     <div>\n       Filter shown with <input value={filterWord} onChange={filterPerson} />\n"
+                },
+                {
+                    "date": 1710645892112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     props.setFilter(event.target.value);\n   };\n   return (\n     <div>\n-      Filter shown with <input value={filterWord} onChange={filterPerson} />\n+      Filter shown with <input value={props.filterWord} onChange={filterPerson} />\n     </div>\n   );\n };\n \n"
+                },
+                {
+                    "date": 1710645898140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,13 @@\n-\n const Filter = (props) => {\n   const filterPerson = (event) => {\n     props.setShowAll(event.target.value === '' ? true : false);\n     props.setFilter(event.target.value);\n   };\n   return (\n     <div>\n-      Filter shown with <input value={props.filterWord} onChange={filterPerson} />\n+      Filter shown with{' '}\n+      <input value={props.filterWord} onChange={filterPerson} />\n     </div>\n   );\n };\n \n"
+                },
+                {
+                    "date": 1710646309257,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,6 @@\n const Filter = (props) => {\n-  const filterPerson = (event) => {\n-    props.setShowAll(event.target.value === '' ? true : false);\n-    props.setFilter(event.target.value);\n-  };\n+\n   return (\n     <div>\n       Filter shown with{' '}\n       <input value={props.filterWord} onChange={filterPerson} />\n"
+                },
+                {
+                    "date": 1710646322000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n   return (\n     <div>\n       Filter shown with{' '}\n-      <input value={props.filterWord} onChange={filterPerson} />\n+      <input value={props.} onChange={filterPerson} />\n     </div>\n   );\n };\n \n"
+                },
+                {
+                    "date": 1710646329532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n   return (\n     <div>\n       Filter shown with{' '}\n-      <input value={props.value} onChange={props} />\n+      <input value={props.value} onChange={props.} />\n     </div>\n   );\n };\n \n"
+                }
+            ],
+            "date": 1710645100477,
+            "name": "Commit-0",
+            "content": "const [showAll, setShowAll] = useState(true);\nconst [filterWord, setFilter] = useState('');\n\n"
+        }
+    ]
+}

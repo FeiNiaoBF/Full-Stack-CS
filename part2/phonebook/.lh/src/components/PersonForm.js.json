@@ -1,0 +1,142 @@
+{
+    "sourceFile": "src/components/PersonForm.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 31,
+            "patches": [
+                {
+                    "date": 1710644688083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1710644693861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-const \n+const PersonForm\n"
+                },
+                {
+                    "date": 1710644702973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,3 @@\n-const PersonForm\n+const PersonForm = () => {\n+\n+}\n"
+                },
+                {
+                    "date": 1710644812657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n-const PersonForm = () => {\n+const PersonForm = (props) => {\n \n }\n"
+                },
+                {
+                    "date": 1710644845171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n const PersonForm = (props) => {\n-\n+    \n }\n"
+                },
+                {
+                    "date": 1710644851264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,15 @@\n const PersonForm = (props) => {\n-    \n+    return (\n+        <form onSubmit={props.onSubmit}>\n+        <div>\n+            name: <input value={props.nameValue} onChange={props.onNameChange} />\n+        </div>\n+        <div>\n+            number: <input value={props.numberValue} onChange={props.onNumberChange} />\n+        </div>\n+        <div>\n+            <button type=\"submit\">add</button>\n+        </div>\n+        </form>\n+    );\n }\n"
+                },
+                {
+                    "date": 1710644886976,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,4 +12,6 @@\n         </div>\n         </form>\n     );\n }\n+\n+ex\n"
+                },
+                {
+                    "date": 1710644893368,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,18 @@\n const PersonForm = (props) => {\n-    return (\n-        <form onSubmit={props.onSubmit}>\n-        <div>\n-            name: <input value={props.nameValue} onChange={props.onNameChange} />\n-        </div>\n-        <div>\n-            number: <input value={props.numberValue} onChange={props.onNumberChange} />\n-        </div>\n-        <div>\n-            <button type=\"submit\">add</button>\n-        </div>\n-        </form>\n-    );\n-}\n+  return (\n+    <form onSubmit={props.onSubmit}>\n+      <div>\n+        name: <input value={props.nameValue} onChange={props.onNameChange} />\n+      </div>\n+      <div>\n+        number:{' '}\n+        <input value={props.numberValue} onChange={props.onNumberChange} />\n+      </div>\n+      <div>\n+        <button type=\"submit\">add</button>\n+      </div>\n+    </form>\n+  );\n+};\n \n-ex\n+export default PersonForm;\n"
+                },
+                {
+                    "date": 1710644923346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+\n+\n const PersonForm = (props) => {\n   return (\n     <form onSubmit={props.onSubmit}>\n       <div>\n"
+                },
+                {
+                    "date": 1710644929809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,17 @@\n+const [persons, setPersons] = useState([\n+  { name: 'Arto Hellas', number: '040-123456', id: 1 },\n+  { name: 'Ada Lovelace', number: '39-44-5323523', id: 2 },\n+  { name: 'Dan Abramov', number: '12-43-234345', id: 3 },\n+  { name: 'Mary Poppendieck', number: '39-23-6423122', id: 4 },\n+]);\n+const [newName, setNewName] = useState('');\n+const [newNumber, setNewNumber] = useState('');\n \n \n+\n+\n+\n const PersonForm = (props) => {\n   return (\n     <form onSubmit={props.onSubmit}>\n       <div>\n"
+                },
+                {
+                    "date": 1710644954685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,12 +6,51 @@\n ]);\n const [newName, setNewName] = useState('');\n const [newNumber, setNewNumber] = useState('');\n \n+// add a new person to the phonebook\n+const addPersons = (event) => {\n+  event.preventDefault();\n+  if (persons.some((p) => p.name === newName && p.number !== '')) {\n+    // debugger;\n+    return windowAlert(newName);\n+  } else if (\n+    // if no number but name in the phonebook\n+    persons.some((person) => person.name === newName && person.number === '')\n+  ) {\n+    // debugger;\n+    const person = persons.find((p) => p.name === newName);\n+    const id = person.id;\n+    const changePerson = { ...person, number: newNumber };\n+    setPersons(persons.map((p) => (p.id !== id ? p : changePerson)));\n+    return;\n+  } else {\n+    // create a object about person\n+    const personObject = {\n+      name: newName,\n+      number: newNumber,\n+      id: persons.length + 1,\n+    };\n+    // update persons\n+    setPersons(persons.concat(personObject));\n+    // Recovery\n+    setNewName('');\n+  }\n+};\n \n+// Change the value of newName\n+const handleNameChange = (event) => {\n+  setNewName(event.target.value);\n+};\n+const handleNumberChange = (event) => {\n+  setNewNumber(event.target.value);\n+};\n \n+// Show alert\n+const windowAlert = () => {\n+  return alert(`${newName} is already added to phonebook`);\n+};\n \n-\n const PersonForm = (props) => {\n   return (\n     <form onSubmit={props.onSubmit}>\n       <div>\n"
+                },
+                {
+                    "date": 1710644963450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,21 +50,7 @@\n   return alert(`${newName} is already added to phonebook`);\n };\n \n const PersonForm = (props) => {\n-  return (\n-    <form onSubmit={props.onSubmit}>\n-      <div>\n-        name: <input value={props.nameValue} onChange={props.onNameChange} />\n-      </div>\n-      <div>\n-        number:{' '}\n-        <input value={props.numberValue} onChange={props.onNumberChange} />\n-      </div>\n-      <div>\n-        <button type=\"submit\">add</button>\n-      </div>\n-    </form>\n-  );\n-};\n+    return \n \n export default PersonForm;\n"
+                },
+                {
+                    "date": 1710644969268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,7 +50,9 @@\n   return alert(`${newName} is already added to phonebook`);\n };\n \n const PersonForm = (props) => {\n-    return \n+    return (\n+        <form\n+    )\n \n export default PersonForm;\n"
+                },
+                {
+                    "date": 1710644975258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,8 +51,18 @@\n };\n \n const PersonForm = (props) => {\n     return (\n-        <form\n+        <form>\n+            <div>\n+                name: <input value={props.newName} onChange={props.handleNameChange} />\n+            </div>\n+            <div>\n+                number: <input value={props.newNumber} onChange={props.handleNumberChange} />\n+            </div>\n+            <div>\n+                <button type=\"submit\" onClick={props.addPersons}>add</button>\n+            </div>\n+        </form>\n     )\n \n export default PersonForm;\n"
+                },
+                {
+                    "date": 1710644980632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n };\n \n const PersonForm = (props) => {\n     return (\n-        <form>\n+        <form i>\n             <div>\n                 name: <input value={props.newName} onChange={props.handleNameChange} />\n             </div>\n             <div>\n"
+                },
+                {
+                    "date": 1710644988404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n };\n \n const PersonForm = (props) => {\n     return (\n-        <form i>\n+        <form onSubmit={}>\n             <div>\n                 name: <input value={props.newName} onChange={props.handleNameChange} />\n             </div>\n             <div>\n"
+                },
+                {
+                    "date": 1710645014750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,18 +51,18 @@\n };\n \n const PersonForm = (props) => {\n     return (\n-        <form onSubmit={}>\n-            <div>\n-                name: <input value={props.newName} onChange={props.handleNameChange} />\n-            </div>\n-            <div>\n-                number: <input value={props.newNumber} onChange={props.handleNumberChange} />\n-            </div>\n-            <div>\n-                <button type=\"submit\" onClick={props.addPersons}>add</button>\n-            </div>\n-        </form>\n+        <form onSubmit={addPersons}>\n+        <div>\n+          name: <input value={newName} onChange={handleNameChange} />\n+        </div>\n+        <div>\n+          number: <input value={newNumber} onChange={handleNumberChange} />\n+        </div>\n+        <div>\n+          <button type=\"submit\">add</button>\n+        </div>\n+      </form>\n     )\n \n export default PersonForm;\n"
+                },
+                {
+                    "date": 1710645021150,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,6 +63,7 @@\n           <button type=\"submit\">add</button>\n         </div>\n       </form>\n     )\n+}\n \n export default PersonForm;\n"
+                },
+                {
+                    "date": 1710645036742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,21 +49,21 @@\n const windowAlert = () => {\n   return alert(`${newName} is already added to phonebook`);\n };\n \n-const PersonForm = (props) => {\n-    return (\n-        <form onSubmit={addPersons}>\n-        <div>\n-          name: <input value={newName} onChange={handleNameChange} />\n-        </div>\n-        <div>\n-          number: <input value={newNumber} onChange={handleNumberChange} />\n-        </div>\n-        <div>\n-          <button type=\"submit\">add</button>\n-        </div>\n-      </form>\n-    )\n-}\n+const PersonForm = () => {\n+  return (\n+    <form onSubmit={addPersons}>\n+      <div>\n+        name: <input value={newName} onChange={handleNameChange} />\n+      </div>\n+      <div>\n+        number: <input value={newNumber} onChange={handleNumberChange} />\n+      </div>\n+      <div>\n+        <button type=\"submit\">add</button>\n+      </div>\n+    </form>\n+  );\n+};\n \n export default PersonForm;\n"
+                },
+                {
+                    "date": 1710645050625,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,20 +50,10 @@\n   return alert(`${newName} is already added to phonebook`);\n };\n \n const PersonForm = () => {\n-  return (\n-    <form onSubmit={addPersons}>\n-      <div>\n-        name: <input value={newName} onChange={handleNameChange} />\n-      </div>\n-      <div>\n-        number: <input value={newNumber} onChange={handleNumberChange} />\n-      </div>\n-      <div>\n-        <button type=\"submit\">add</button>\n-      </div>\n-    </form>\n-  );\n+    return (\n+        \n+    )\n };\n \n export default PersonForm;\n"
+                },
+                {
+                    "date": 1710645057181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,10 +50,20 @@\n   return alert(`${newName} is already added to phonebook`);\n };\n \n const PersonForm = () => {\n-    return (\n-        \n-    )\n+  return (\n+    <form onSubmit={addPersons}>\n+      <div>\n+        name: <input value={newName} onChange={handleNameChange} />\n+      </div>\n+      <div>\n+        number: <input value={newNumber} onChange={handleNumberChange} />\n+      </div>\n+      <div>\n+        <button type=\"submit\">add</button>\n+      </div>\n+    </form>\n+  );\n };\n \n export default PersonForm;\n"
+                },
+                {
+                    "date": 1710645346260,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,6 @@\n-const [persons, setPersons] = useState([\n-  { name: 'Arto Hellas', number: '040-123456', id: 1 },\n-  { name: 'Ada Lovelace', number: '39-44-5323523', id: 2 },\n-  { name: 'Dan Abramov', number: '12-43-234345', id: 3 },\n-  { name: 'Mary Poppendieck', number: '39-23-6423122', id: 4 },\n-]);\n-const [newName, setNewName] = useState('');\n-const [newNumber, setNewNumber] = useState('');\n \n+\n // add a new person to the phonebook\n const addPersons = (event) => {\n   event.preventDefault();\n   if (persons.some((p) => p.name === newName && p.number !== '')) {\n"
+                },
+                {
+                    "date": 1710645457162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,4 @@\n-\n-\n // add a new person to the phonebook\n const addPersons = (event) => {\n   event.preventDefault();\n   if (persons.some((p) => p.name === newName && p.number !== '')) {\n"
+                },
+                {
+                    "date": 1710645471792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n   setNewNumber(event.target.value);\n };\n \n // Show alert\n-const windowAlert = () => {\n+const windowAlert = (p) => {\n   return alert(`${newName} is already added to phonebook`);\n };\n \n const PersonForm = () => {\n"
+                },
+                {
+                    "date": 1710645482373,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n   setNewNumber(event.target.value);\n };\n \n // Show alert\n-const windowAlert = (p) => {\n+const windowAlert = (protprops) => {\n   return alert(`${newName} is already added to phonebook`);\n };\n \n const PersonForm = () => {\n"
+                },
+                {
+                    "date": 1710645489267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,13 +36,13 @@\n   setNewNumber(event.target.value);\n };\n \n // Show alert\n-const windowAlert = (protprops) => {\n+const windowAlert = () => {\n   return alert(`${newName} is already added to phonebook`);\n };\n \n-const PersonForm = () => {\n+const PersonForm = (props) => {\n   return (\n     <form onSubmit={addPersons}>\n       <div>\n         name: <input value={newName} onChange={handleNameChange} />\n"
+                },
+                {
+                    "date": 1710645494795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,20 +41,8 @@\n   return alert(`${newName} is already added to phonebook`);\n };\n \n const PersonForm = (props) => {\n-  return (\n-    <form onSubmit={addPersons}>\n-      <div>\n-        name: <input value={newName} onChange={handleNameChange} />\n-      </div>\n-      <div>\n-        number: <input value={newNumber} onChange={handleNumberChange} />\n-      </div>\n-      <div>\n-        <button type=\"submit\">add</button>\n-      </div>\n-    </form>\n-  );\n+    return \n };\n \n export default PersonForm;\n"
+                },
+                {
+                    "date": 1710645531800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,8 +41,20 @@\n   return alert(`${newName} is already added to phonebook`);\n };\n \n const PersonForm = (props) => {\n-    return \n+    return (\n+        <form onSubmit={addPersons}>\n+          <div>\n+            name: <input value={props} onChange={handleNameChange} />\n+          </div>\n+          <div>\n+            number: <input value={newNumber} onChange={handleNumberChange} />\n+          </div>\n+          <div>\n+            <button type=\"submit\">add</button>\n+          </div>\n+        </form>\n+    )\n };\n \n export default PersonForm;\n"
+                },
+                {
+                    "date": 1710645540213,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n const PersonForm = (props) => {\n     return (\n         <form onSubmit={addPersons}>\n           <div>\n-            name: <input value={props} onChange={handleNameChange} />\n+            name: <input value={props.new} onChange={handleNameChange} />\n           </div>\n           <div>\n             number: <input value={newNumber} onChange={handleNumberChange} />\n           </div>\n"
+                },
+                {
+                    "date": 1710645545330,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,12 +44,12 @@\n const PersonForm = (props) => {\n     return (\n         <form onSubmit={addPersons}>\n           <div>\n-            name: <input value={props.new} onChange={handleNameChange} />\n+            name: <input value={props.newName} onChange={handleNameChange} />\n           </div>\n           <div>\n-            number: <input value={newNumber} onChange={handleNumberChange} />\n+            number: <input value={props.newNumber} onChange={handleNumberChange} />\n           </div>\n           <div>\n             <button type=\"submit\">add</button>\n           </div>\n"
+                },
+                {
+                    "date": 1710646020540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,60 +0,0 @@\n-// add a new person to the phonebook\n-const addPersons = (event) => {\n-  event.preventDefault();\n-  if (persons.some((p) => p.name === newName && p.number !== '')) {\n-    // debugger;\n-    return windowAlert(newName);\n-  } else if (\n-    // if no number but name in the phonebook\n-    persons.some((person) => person.name === newName && person.number === '')\n-  ) {\n-    // debugger;\n-    const person = persons.find((p) => p.name === newName);\n-    const id = person.id;\n-    const changePerson = { ...person, number: newNumber };\n-    setPersons(persons.map((p) => (p.id !== id ? p : changePerson)));\n-    return;\n-  } else {\n-    // create a object about person\n-    const personObject = {\n-      name: newName,\n-      number: newNumber,\n-      id: persons.length + 1,\n-    };\n-    // update persons\n-    setPersons(persons.concat(personObject));\n-    // Recovery\n-    setNewName('');\n-  }\n-};\n-\n-// Change the value of newName\n-const handleNameChange = (event) => {\n-  setNewName(event.target.value);\n-};\n-const handleNumberChange = (event) => {\n-  setNewNumber(event.target.value);\n-};\n-\n-// Show alert\n-const windowAlert = () => {\n-  return alert(`${newName} is already added to phonebook`);\n-};\n-\n-const PersonForm = (props) => {\n-    return (\n-        <form onSubmit={addPersons}>\n-          <div>\n-            name: <input value={props.newName} onChange={handleNameChange} />\n-          </div>\n-          <div>\n-            number: <input value={props.newNumber} onChange={handleNumberChange} />\n-          </div>\n-          <div>\n-            <button type=\"submit\">add</button>\n-          </div>\n-        </form>\n-    )\n-};\n-\n-export default PersonForm;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1710646381522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,13 @@\n-\n+const PersonForm = ({ addPerson, newName, handleNameChange, newNumber, handleNumberChange }) => (\n+    <form onSubmit={addPerson}>\n+      <div>\n+        name: <input value={newName} onChange={handleNameChange} />\n+      </div>\n+      <div>\n+        number: <input value={newNumber} onChange={handleNumberChange} />\n+      </div>\n+      <div>\n+        <button type=\"submit\">add</button>\n+      </div>\n+    </form>\n+  );\n"
+                }
+            ],
+            "date": 1710644688083,
+            "name": "Commit-0",
+            "content": "const \n"
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "sourceFile": "src/components/Persons.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1710645278757,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1710645293909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-p\n+import Name from './components/Name';\n"
+                },
+                {
+                    "date": 1710645302686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,4 @@\n import Name from './components/Name';\n+\n+const Persons = ({ persons, showAll, filterWord }) => {\n+    \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1710645313571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,16 @@\n import Name from './components/Name';\n \n const Persons = ({ persons, showAll, filterWord }) => {\n-    \n\\ No newline at end of file\n+    const personsToShow = showAll ? persons : searchPerson(filterWord);\n+\n+    return (\n+        <div>\n+        <h2>Numbers</h2>\n+        {personsToShow.map((person) => (\n+            <Name key={person.name} person={person} />\n+        ))}\n+        </div>\n+    );\n+    }\n+\n+    export de\n"
+                },
+                {
+                    "date": 1710645318866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,16 @@\n import Name from './components/Name';\n \n const Persons = ({ persons, showAll, filterWord }) => {\n-    const personsToShow = showAll ? persons : searchPerson(filterWord);\n+  const personsToShow = showAll ? persons : searchPerson(filterWord);\n \n-    return (\n-        <div>\n-        <h2>Numbers</h2>\n-        {personsToShow.map((person) => (\n-            <Name key={person.name} person={person} />\n-        ))}\n-        </div>\n-    );\n-    }\n+  return (\n+    <div>\n+      <h2>Numbers</h2>\n+      {personsToShow.map((person) => (\n+        <Name key={person.name} person={person} />\n+      ))}\n+    </div>\n+  );\n+};\n \n-    export de\n+export default Persons;\n"
+                },
+                {
+                    "date": 1710645420646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,13 @@\n import Name from './components/Name';\n \n+// Search the person\n+const searchPerson = (event) => {\n+    return persons.filter((p) =>\n+      p.name.toLowerCase().includes(event.toLowerCase())\n+    );\n+  };\n+\n const Persons = ({ persons, showAll, filterWord }) => {\n   const personsToShow = showAll ? persons : searchPerson(filterWord);\n \n   return (\n"
+                },
+                {
+                    "date": 1710645426615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import Name from './components/Name';\n \n // Search the person\n const searchPerson = (event) => {\n-    return persons.filter((p) =>\n+    return Persons.filter((p) =>\n       p.name.toLowerCase().includes(event.toLowerCase())\n     );\n   };\n \n"
+                },
+                {
+                    "date": 1710645435130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n import Name from './components/Name';\n \n // Search the person\n const searchPerson = (event) => {\n-    return Persons.filter((p) =>\n-      p.name.toLowerCase().includes(event.toLowerCase())\n-    );\n-  };\n+  return Persons.filter((p) =>\n+    p.name.toLowerCase().includes(event.toLowerCase())\n+  );\n+};\n \n const Persons = ({ persons, showAll, filterWord }) => {\n   const personsToShow = showAll ? persons : searchPerson(filterWord);\n \n"
+                }
+            ],
+            "date": 1710645278757,
+            "name": "Commit-0",
+            "content": "p\n"
+        }
+    ]
+}

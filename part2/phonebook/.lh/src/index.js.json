@@ -1,0 +1,50 @@
+{
+    "sourceFile": "src/index.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1710635453551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1710635459143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n import React from 'react';\n import ReactDOM from 'react-dom/client';\n+import App from './App';\n \n-import App from './App';\n+ReactDOM.render(\n"
+                },
+                {
+                    "date": 1710635475487,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n import React from 'react';\n import ReactDOM from 'react-dom/client';\n import App from './App';\n \n-ReactDOM.render(\n+ReactDOM.render()\n"
+                },
+                {
+                    "date": 1710635482775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import React from 'react';\n import ReactDOM from 'react-dom/client';\n import App from './App';\n \n-ReactDOM.render()\n+ReactDOM.render(\n+  \n"
+                },
+                {
+                    "date": 1710635488865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n import React from 'react';\n import ReactDOM from 'react-dom/client';\n import App from './App';\n \n-ReactDOM.render(\n-  \n+ReactDOM.render(<App />, document.getElementById('root'));\n"
+                },
+                {
+                    "date": 1710635653520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n import React from 'react';\n import ReactDOM from 'react-dom/client';\n import App from './App';\n \n-ReactDOM.render(<App />, document.getElementById('root'));\n+ReactDOM..c\n"
+                },
+                {
+                    "date": 1710635661036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import React from 'react';\n+import React from 'c';\n import ReactDOM from 'react-dom/client';\n import App from './App';\n \n ReactDOM..c\n"
+                },
+                {
+                    "date": 1710635670800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import React from 'c';\n+import React from '';\n import ReactDOM from 'react-dom/client';\n import App from './App';\n \n ReactDOM..c\n"
+                },
+                {
+                    "date": 1710635677099,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import React from '';\n+import React from 'react';\n import ReactDOM from 'react-dom/client';\n import App from './App';\n \n-ReactDOM..c\n+ReactDOM.createRoot\n"
+                }
+            ],
+            "date": 1710635453551,
+            "name": "Commit-0",
+            "content": "import React from 'react';\nimport ReactDOM from 'react-dom/client';\n\nimport App from './App';\n"
+        }
+    ]
+}
