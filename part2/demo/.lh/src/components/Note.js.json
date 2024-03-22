@@ -3,11 +3,67 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 14,
             "patches": [
                 {
                     "date": 1710595151857,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1711111328361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react';\n \n-const Note = ({ note }) => {\n+const Note = ({ note,  }) => {\n   return <li>{note.content}</li>;\n };\n \n export default Note;\n"
+                },
+                {
+                    "date": 1711111336336,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react';\n \n-const Note = ({ note,  }) => {\n+const Note = ({ note, toggle }) => {\n   return <li>{note.content}</li>;\n };\n \n export default Note;\n"
+                },
+                {
+                    "date": 1711111342526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react';\n \n-const Note = ({ note, toggle }) => {\n+const Note = ({ note, toggleImportance }) => {\n   return <li>{note.content}</li>;\n };\n \n export default Note;\n"
+                },
+                {
+                    "date": 1711111356520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import React from 'react';\n \n-const Note = ({ note, toggleImportance }) => {\n+const Note = ({ note, toggleImportance}) => {\n+  \n   return <li>{note.content}</li>;\n };\n \n export default Note;\n"
+                },
+                {
+                    "date": 1711111367764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react';\n \n const Note = ({ note, toggleImportance}) => {\n-  \n+  const label = note.im\n   return <li>{note.content}</li>;\n };\n \n export default Note;\n"
+                },
+                {
+                    "date": 1711111376838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react';\n \n const Note = ({ note, toggleImportance}) => {\n-  const label = note.im\n+  const label = note.important\n   return <li>{note.content}</li>;\n };\n \n export default Note;\n"
+                },
+                {
+                    "date": 1711111382402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import React from 'react';\n \n const Note = ({ note, toggleImportance}) => {\n   const label = note.important\n+  ? ''\n   return <li>{note.content}</li>;\n };\n \n export default Note;\n"
+                },
+                {
+                    "date": 1711111387971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\n \n const Note = ({ note, toggleImportance}) => {\n   const label = note.important\n-  ? ''\n+  ? 'make not im'\n   return <li>{note.content}</li>;\n };\n \n export default Note;\n"
+                },
+                {
+                    "date": 1711111395103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\n \n const Note = ({ note, toggleImportance}) => {\n   const label = note.important\n-  ? 'make not im'\n+  ? 'make not important' : ''\n   return <li>{note.content}</li>;\n };\n \n export default Note;\n"
+                },
+                {
+                    "date": 1711111400817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\n \n const Note = ({ note, toggleImportance}) => {\n   const label = note.important\n-  ? 'make not important' : ''\n+  ? 'make not important' : 'make important'\n   return <li>{note.content}</li>;\n };\n \n export default Note;\n"
+                },
+                {
+                    "date": 1711111409241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\n \n-const Note = ({ note, toggleImportance}) => {\n-  const label = note.important\n-  ? 'make not important' : 'make important'\n-  return <li>{note.content}</li>;\n+const Note = ({ note, toggleImportance }) => {\n+  const label = note.important ? 'make not important' : 'make important';\n+  return <li>{note.content}\n+  </li>;\n };\n \n export default Note;\n"
+                },
+                {
+                    "date": 1711111419854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n import React from 'react';\n \n const Note = ({ note, toggleImportance }) => {\n   const label = note.important ? 'make not important' : 'make important';\n-  return <li>{note.content}\n-  </li>;\n+  return (<li>{note.content}</li>;)\n };\n \n export default Note;\n"
+                },
+                {
+                    "date": 1711111430918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n import React from 'react';\n \n const Note = ({ note, toggleImportance }) => {\n   const label = note.important ? 'make not important' : 'make important';\n-  return (<li>{note.content}</li>;)\n+  return (<li>{note.content}\n+    \n+  </li>)\n };\n \n export default Note;\n"
+                },
+                {
+                    "date": 1711111436739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,13 @@\n import React from 'react';\n \n const Note = ({ note, toggleImportance }) => {\n   const label = note.important ? 'make not important' : 'make important';\n-  return (<li>{note.content}\n-    \n-  </li>)\n+  return (\n+    <li>\n+      {note.content}\n+      <button onClick={toggleImportance}>{label}</button>\n+    </li>\n+  );\n };\n \n export default Note;\n"
                 }
             ],
             "date": 1710595151857,
