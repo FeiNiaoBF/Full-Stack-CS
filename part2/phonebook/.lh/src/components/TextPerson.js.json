@@ -1,0 +1,70 @@
+{
+    "sourceFile": "src/components/TextPerson.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1711118598156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1711118606594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,3 @@\n import React from 'react';\n-import \n+\n+const \n"
+                },
+                {
+                    "date": 1711118614835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,4 @@\n import React from 'react';\n \n-const \n+const TextPerson = ({ personsToShow, toDelPerson }) => {\n+}\n"
+                },
+                {
+                    "date": 1711118621122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n import React from 'react';\n \n const TextPerson = ({ personsToShow, toDelPerson }) => {\n+    return \n }\n"
+                },
+                {
+                    "date": 1711118631417,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,9 @@\n import React from 'react';\n \n const TextPerson = ({ personsToShow, toDelPerson }) => {\n-    return \n+    return (\n+        <div>\n+            \n+        </div>\n+    );\n }\n"
+                },
+                {
+                    "date": 1711118640194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,8 @@\n \n const TextPerson = ({ personsToShow, toDelPerson }) => {\n     return (\n         <div>\n-            \n+            {}\n         </div>\n     );\n }\n"
+                },
+                {
+                    "date": 1711118647359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\n \n-const TextPerson = ({ personsToShow, toDelPerson }) => {\n+const TextPerson = ({ persons, toDelPerson }) => {\n     return (\n         <div>\n-            {}\n+            {persons.}\n         </div>\n     );\n }\n"
+                },
+                {
+                    "date": 1711118654790,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,8 @@\n \n const TextPerson = ({ persons, toDelPerson }) => {\n     return (\n         <div>\n-            {persons.}\n+            {persons.name} {persons.}\n         </div>\n     );\n }\n"
+                },
+                {
+                    "date": 1711118661491,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n \n const TextPerson = ({ persons, toDelPerson }) => {\n     return (\n         <div>\n-            {persons.name} {persons.}\n+            {persons.name} {persons.number}\n+            \n         </div>\n     );\n }\n"
+                },
+                {
+                    "date": 1711118667777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n import React from 'react';\n \n const TextPerson = ({ persons, toDelPerson }) => {\n-    return (\n-        <div>\n-            {persons.name} {persons.number}\n-            \n-        </div>\n-    );\n-}\n+  return (\n+    <div>\n+      {persons.name} {persons.number}\n+      <button onClick={toDelPerson}>delete</button>\n+    </div>\n+  );\n+};\n"
+                },
+                {
+                    "date": 1711119030501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,4 +7,6 @@\n       <button onClick={toDelPerson}>delete</button>\n     </div>\n   );\n };\n+\n+ex\n"
+                },
+                {
+                    "date": 1711119036052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,5 +8,5 @@\n     </div>\n   );\n };\n \n-ex\n+export default TextPerson;\n"
+                },
+                {
+                    "date": 1711119072178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react';\n \n-const TextPerson = ({ persons, toDelPerson }) => {\n+const TextPerson = ({ name, toDelPerson }) => {\n   return (\n     <div>\n       {persons.name} {persons.number}\n       <button onClick={toDelPerson}>delete</button>\n"
+                },
+                {
+                    "date": 1711119078609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n import React from 'react';\n \n-const TextPerson = ({ name, toDelPerson }) => {\n+const TextPerson = ({ name,number, toDelPerson }) => {\n   return (\n     <div>\n-      {persons.name} {persons.number}\n+      {persons.name} {number}\n       <button onClick={toDelPerson}>delete</button>\n     </div>\n   );\n };\n"
+                }
+            ],
+            "date": 1711118598156,
+            "name": "Commit-0",
+            "content": "import React from 'react';\nimport \n"
+        }
+    ]
+}

@@ -1,10 +1,16 @@
-const Persons = ({ personsToShow }) => {
+import React from 'react';
+import TextPerson from './TextPerson';
+
+const Persons = ({ personsToShow, toDelPerson }) => {
   return (
     <div>
       {personsToShow.map((person) => (
-        <div key={person.id}>
-          {person.name} {person.number}
-        </div>
+        <TextPerson
+          key={person.id}
+          name={person.name}
+          number={person.number}
+          toDelPerson={() => toDelPerson(person.id, person.name)}
+        />
       ))}
     </div>
   );

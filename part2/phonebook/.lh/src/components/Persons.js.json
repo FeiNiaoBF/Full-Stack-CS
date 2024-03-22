@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 28,
+            "activePatchIndex": 35,
             "patches": [
                 {
                     "date": 1710645278757,
@@ -120,6 +120,34 @@
                 {
                     "date": 1710678276304,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,13 @@\n+const Persons = ({ personsToShow }) => {\n+  return (\n+    <div>\n+      {personsToShow.map((person) => (\n+        <div key={person.id}>\n+          {person.name} {person.number}\n+        </div>\n+      ))}\n+    </div>\n+  );\n+};\n \n+export default Persons;\n"
+                },
+                {
+                    "date": 1711116778136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+\n const Persons = ({ personsToShow }) => {\n   return (\n     <div>\n       {personsToShow.map((person) => (\n"
+                },
+                {
+                    "date": 1711116784597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n+import React from 'react';\n \n-const Persons = ({ personsToShow }) => {\n+const Persons = ({ personsToShow, }) => {\n   return (\n     <div>\n       {personsToShow.map((person) => (\n         <div key={person.id}>\n"
+                },
+                {
+                    "date": 1711116791526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react';\n \n-const Persons = ({ personsToShow, }) => {\n+const Persons = ({ personsToShow, toDelPerson}) => {\n   return (\n     <div>\n       {personsToShow.map((person) => (\n         <div key={person.id}>\n"
+                },
+                {
+                    "date": 1711116817898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import React from 'react';\n \n-const Persons = ({ personsToShow, toDelPerson}) => {\n+const Persons = ({ personsToShow, toDelPerson }) => {\n   return (\n     <div>\n+      \n       {personsToShow.map((person) => (\n         <div key={person.id}>\n           {person.name} {person.number}\n         </div>\n"
+                },
+                {
+                    "date": 1711116824587,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,14 +2,14 @@\n \n const Persons = ({ personsToShow, toDelPerson }) => {\n   return (\n     <div>\n-      \n-      {personsToShow.map((person) => (\n+      <li>      {personsToShow.map((person) => (\n         <div key={person.id}>\n           {person.name} {person.number}\n         </div>\n-      ))}\n+      ))}</li>\n+\n     </div>\n   );\n };\n \n"
+                },
+                {
+                    "date": 1711116829657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const Persons = ({ personsToShow, toDelPerson }) => {\n   return (\n     <div>\n       <li>\n-        {' '}\n+\n         {personsToShow.map((person) => (\n           <div key={person.id}>\n             {person.name} {person.number}\n           </div>\n"
+                },
+                {
+                    "date": 1711118884781,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from 'react';\n-import TextPerson from 'T';\n+import TextPerson from '';\n \n const Persons = ({ personsToShow, toDelPerson }) => {\n   return (\n     <div>\n"
                 }
             ],
             "date": 1710645278757,
