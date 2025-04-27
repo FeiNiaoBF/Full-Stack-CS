@@ -35,3 +35,5 @@ export default {
   update: update,
   del: deletePerson,
 };
+
+// export default personService;
